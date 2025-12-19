@@ -2,6 +2,7 @@ import React from 'react';
 import LandingPage from './Harika/pages/LandingPage';
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
+import './MobileResponsive.css';
 import ProductMenu from './Harika/components/ProductMenu';
 
 const App = () => {

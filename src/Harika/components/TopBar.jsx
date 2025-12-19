@@ -16,7 +16,8 @@ const TopBar = ({ setSearchTerm }) => {
                     placeholder="Search restaurants..."
                     aria-label="Search items"
                     className="searchInput"
-                    onChange={(e) => setSearchTerm(e.target.value)}
+                    onChange={(e) => setSearchTerm?.(e.target.value)}
+
                 />
             </div>
 

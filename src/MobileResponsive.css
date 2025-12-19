@@ -1,0 +1,513 @@
+/* Base styles remain same as before */
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .topBarSection {
+    flex-direction: column; /* stack rows vertically */
+    align-items: stretch;
+    padding: 10px;
+  }
+
+  /* First row: logo left, auth button right */
+  .topBarRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .companyTitle {
+    text-align: left;
+    order:1;
+  }
+
+  .userAuth {
+    order:1;
+    margin-top: -35px;
+    text-align: right;
+  }
+
+  .authButton {
+    padding: 6px 12px;
+    width: auto; /* keep button compact */
+  }
+
+  /* Second row: search bar centered */
+  .searchBar {
+    width: 100%;
+    display: flex;
+    margin-top: 15px;
+    justify-content: center;
+    order:2;
+  }
+
+  .searchInput {
+    width: 40%;
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Ultra-small screens (≤344px) */
+@media (max-width: 344px) {
+  .topBarSection {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 8px;
+  }
+
+  .companyTitle {
+    text-align: center;
+    margin-bottom: 8px;
+  }
+
+  .companyTitle h2 {
+    font-size: 1rem; /* shrink title */
+  }
+
+  .searchBar {
+    margin: 0 0 8px 0;
+  }
+
+  .searchInput {
+    font-size: 0.8rem;
+    padding: 6px 8px;
+  }
+
+  .userAuth {
+    text-align: center;
+  }
+
+  .authButton {
+    width: 100%;
+    font-size: 0.8rem;
+    padding: 6px 10px;
+  }
+}
+
+
+/* ===============================
+   MOBILE & SMALL DEVICES
+================================ */
+@media (max-width: 575px) {
+
+  .itemSectionWrapper {
+    position: relative;
+    width: 100%;
+  }
+
+  .itemSection {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+
+    /* hide scrollbar */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .itemSection::-webkit-scrollbar {
+    display: none;
+  }
+
+  .gallery {
+    flex: 0 0 70%;      /* controls item width */
+    min-height: 150px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #f3f3f3;
+  }
+
+  .gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+}
+
+
+@media (max-width: 575px) {
+
+  .itemSectionWrapper {
+    position: relative;
+    width: 100%;
+  }
+
+  .itemSection {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+
+    scrollbar-width: none;
+  }
+
+  .itemSection::-webkit-scrollbar {
+    display: none;
+  }
+
+  .gallery {
+    flex: 0 0 70%;
+    height: 150px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #f3f3f3;
+  }
+
+  .gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+}
+
+
+/* ===============================
+   MOBILE ONLY AUTO SCROLL
+================================ */
+@media (max-width: 575px) {
+
+  .itemSection {
+    display: flex;
+    width: max-content;          /* 🔴 auto size to ALL items */
+    overflow: hidden;
+
+    animation: autoScroll 25s linear infinite;
+    will-change: transform;
+  }
+
+  .gallery {
+    flex: 0 0 20vw;              /* 🔴 EXACTLY 2 images visible */
+    height: 150px;
+    padding: 5px;
+    box-sizing: border-box;
+  }
+
+  .gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 8px;
+  }
+
+  /* ===============================
+     AUTO SCROLL
+  ============================== */
+  @keyframes autoScroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-70%);
+    }
+  }
+}
+@media (max-width: 575px) {
+
+  html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;   /* 🔴 removes right empty space */
+  }
+}
+
+
+/* ===============================
+   MOBILE ONLY – CHAINS SECTION
+================================ */
+@media (max-width: 575px) {
+
+  /* Prevent horizontal overflow */
+  html, body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* Heading */
+  .chainHeading {
+    font-size: 15px;
+    margin: 10px;
+    text-align: left;      /* 🔴 force left */
+    width: 100%; 
+    margin-left: -100px;
+    margin-bottom: -30px;
+  }
+
+   .chainWrapper {
+     display: flex;
+    width: max-content;          /* 🔴 auto size to ALL items */
+    overflow: hidden;
+    margin-left: -120px;
+  }
+
+
+  /* Each vendor card */
+  .vendorBox {
+    flex: 0 0 70%;              /* 🔴 good size for mobile */
+    max-width: 70%;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  /* Firm name */
+  .firmName {
+    font-size: 14px;
+    font-weight: 600;
+    padding: 6px 8px;
+    text-align: center;
+  }
+
+  /* Firm image */
+  .firmImage img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    display: block;
+  }
+
+
+  /* Loader center */
+  .loader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 60vh;
+  }
+}
+
+
+/* ===============================
+   MOBILE ONLY – FIRM CONTROLLERS
+================================ */
+@media (max-width: 575px) {
+
+  /* Prevent horizontal overflow */
+  html, body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* Heading */
+  .firmHeading {
+    font-size: 16px;
+    text-align: left;
+    margin: 16px 12px;
+    margin-left: -110px;
+  }
+
+  /* Filter buttons */
+  .filterButton {
+    gap: 8px;
+    margin: 12px 0;
+    padding: 0 12px;
+    margin-left: -120px;
+    justify-content: flex-start;
+  }
+
+  .filterButton button {
+    padding: 6px 14px;
+    font-size: 13px;
+    border-radius: 16px;
+  }
+
+  /* Grid → single column on mobile */
+  .firmSection {
+    display: grid;
+    grid-template-columns: 1fr;     /* 🔴 one card per row */
+    gap: 16px;
+    padding: 0 12px 20px;
+  }
+
+   /* Vendor wrapper */
+  .vendorBox {
+    display: contents;   /* keep grid behavior */
+  }
+
+  /* Card – centered properly */
+  .firmCard {
+    width: 200%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: -55px;
+  }
+
+  /* Image container */
+  .firmImages {
+    width: 100%;              /* 🔴 medium width */
+    height: 180px;
+    margin: 0 auto;          /* 🔴 center image */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+   /* Actual image */
+  .firmImages img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+  }
+
+
+  /* Offer text */
+  .firmoffer {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+
+  /* Firm name */
+  .firmName {
+    font-size: 16px;
+    margin: 12px 0 6px;
+  }
+
+  /* Region & area */
+  .firmregion h4,
+  .firmarea h4 {
+    font-size: 13px;
+    margin: 2px 0;
+  }
+
+  /* Disable hover lift on mobile */
+  .firmCard:hover {
+    transform: none;
+  }
+
+  /* Loader */
+  .loader {
+    height: 60vh;
+    font-size: 1rem;
+  }
+}
+
+/* ===============================
+   MOBILE ONLY – PRODUCT MENU
+================================ */
+@media (max-width: 575px) {
+
+  /* Prevent horizontal overflow */
+  html, body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* Restaurant name */
+  .restaurantname {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 16px 12px;
+    text-align: left;
+  }
+
+  /* Product list */
+  .productSection {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 0 12px 20px;
+  }
+
+  /* Product card */
+  .productCard {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+margin-right: -50px;
+    background: #fff;
+    border-radius: 12px;
+    padding: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  }
+
+  /* Product info (left side) */
+  .productInfo {
+    flex: 1;
+    margin-left: -40px;
+  }
+
+  .productName {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #222;
+  }
+
+  .productDetails p {
+    font-size: 13px;
+    color: #666;
+    margin: 2px 0;
+  }
+
+  /* Product image area (right side) */
+  .productImages {
+    width: 110px;              /* 🔴 medium image width */
+    flex-shrink: 0;
+    text-align: center;
+  }
+
+  .productImages img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+  }
+
+  /* Actions */
+  .productActions {
+    margin-top: 6px;
+    position: relative;
+  }
+
+  .addButton {
+    width: 100%;
+    padding: 6px 0;
+    font-size: 13px;
+    font-weight: 600;
+
+    border: 1px solid #ff6f00;
+    background: #fff;
+    color: #ff6f00;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  .plusIcon {
+    font-weight: bold;
+    margin-right: 4px;
+  }
+
+  .customisableTag {
+    font-size: 11px;
+    color: #ff6f00;
+    margin-top: 4px;
+  }
+
+  /* Loading / error text */
+  .error {
+    color: red;
+    margin: 12px;
+    font-size: 14px;
+  }
+}

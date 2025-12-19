@@ -19,6 +19,15 @@ body{
   box-sizing: border-box;  
 }
 
+.companyTitle {
+  position: relative;
+  z-index: 10000;
+}
+
+.companyTitle h2 {
+  cursor: pointer;
+}
+
 
 /* TopBar container */
 .topBarSection {
